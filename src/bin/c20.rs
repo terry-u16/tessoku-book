@@ -186,37 +186,7 @@ struct State {
 }
 
 impl State {
-    fn init(input: &Input, seed: u128) -> Self {
-        let mut rng = Pcg64Mcg::new(seed);
-        let mut assigns = vec![!0; input.district_count];
-
-        for i in 0..input.merged_count {
-            loop {
-                let j = rng.gen_range(0, input.district_count);
-
-                if assigns[j] == !0 {
-                    assigns[j] = i;
-                    break;
-                }
-            }
-        }
-
-        let mut queue = VecDeque::new();
-        for (i, &assign) in assigns.iter().enumerate() {
-            if assign != !0 {
-                queue.push_back((i, assign));
-            }
-        }
-
-        while let Some((i, assign)) = queue.pop_front() {
-            for &next in input.map[i].iter() {
-                if assigns[next] == !0 {
-                    assigns[next] = assign;
-                    queue.push_back((next, assign));
-                }
-            }
-        }
-
+    fn new(input: &Input, assigns: Vec<usize>) -> Self {
         let mut assign_counts = vec![0; input.merged_count];
 
         for assign in assigns.iter() {
@@ -348,25 +318,90 @@ fn main() {
 }
 
 fn solve(input: &Input) -> State {
-    let init_state = get_init(input);
+    let init_state = get_init_random(input);
     let elapsed = (Instant::now() - input.since).as_secs_f64();
     eprintln!("elapsed: {:.3}s", elapsed);
     let state = annealing(input, init_state, 0.99 - elapsed);
     state
 }
 
-fn get_init(input: &Input) -> State {
-    let mut best_state = State::init(input, 42);
+fn get_init_random(input: &Input) -> State {
+    let mut best_state = gen_init(input, 42);
     let mut best_score = best_state.calc_annealing_score(input);
 
-    for seed in 0..100 {
-        let state = State::init(input, seed);
+    for seed in 0..50 {
+        let state = gen_init(input, seed);
         if chmax!(best_score, state.calc_annealing_score(input)) {
             best_state = state;
         }
     }
 
     best_state
+}
+
+fn gen_init(input: &Input, seed: u128) -> State {
+    let mut rng = Pcg64Mcg::new(seed);
+
+    let mut assigns = vec![!0; input.district_count];
+    let mut population_count = vec![0; input.merged_count];
+    let mut staff_count = vec![0; input.merged_count];
+
+    for i in 0..input.merged_count {
+        loop {
+            let j = rng.gen_range(0, input.district_count);
+
+            if assigns[j] == !0 {
+                assigns[j] = i;
+                population_count[i] += input.districts[j].population;
+                staff_count[i] += input.districts[j].staff;
+                break;
+            }
+        }
+    }
+
+    for _ in 0..(input.district_count - input.merged_count) {
+        let mut best_score = std::i64::MAX;
+        let mut best_op = (!0, !0);
+
+        for (i, &assign) in assigns.iter().enumerate() {
+            if assign == !0 {
+                continue;
+            }
+
+            for &next in input.map[i].iter() {
+                fn score(input: &Input, population: i64, staff: i64) -> i64 {
+                    let mut score = 0;
+                    let diff = input.average_population - population;
+                    score += diff * diff;
+                    let diff = input.average_staff - staff;
+                    score += diff * diff * 2500;
+                    score
+                }
+
+                if assigns[next] != !0 {
+                    continue;
+                }
+
+                let mut population = population_count[assign];
+                let mut staff = staff_count[assign];
+                let current_score = score(input, population, staff);
+                population += input.districts[next].population;
+                staff += input.districts[next].staff;
+                let new_score = score(input, population, staff);
+
+                if chmin!(best_score, new_score - current_score) {
+                    best_op = (next, assign);
+                }
+            }
+        }
+
+        let (i, assign) = best_op;
+        assigns[i] = assign;
+        population_count[assign] += input.districts[i].population;
+        staff_count[assign] += input.districts[i].staff;
+    }
+
+    State::new(input, assigns)
 }
 
 fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
@@ -385,8 +420,8 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
     let since = std::time::Instant::now();
     let mut time = 0.0;
 
-    let temp0 = 1e12;
-    let temp1 = 1e9;
+    let temp0 = 1e11;
+    let temp1 = 1e8;
     let mut inv_temp = 1.0 / temp0;
 
     while time < 1.0 {
