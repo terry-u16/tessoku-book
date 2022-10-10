@@ -181,6 +181,7 @@ impl District {
 #[derive(Debug, Clone)]
 struct State {
     assigns: Vec<usize>,
+    assign_counts: Vec<i32>,
 }
 
 impl State {
@@ -215,7 +216,35 @@ impl State {
             }
         }
 
-        Self { assigns }
+        let mut assign_counts = vec![0; input.merged_count];
+
+        for assign in assigns.iter() {
+            assign_counts[*assign] += 1;
+        }
+
+        Self {
+            assigns,
+            assign_counts,
+        }
+    }
+
+    fn calc_score(&self, input: &Input) -> i64 {
+        let mut population_counts = vec![0; input.merged_count];
+        let mut staff_counts = vec![0; input.merged_count];
+
+        for (assign, district) in self.assigns.iter().zip(input.districts.iter()) {
+            population_counts[*assign] += district.population;
+            staff_counts[*assign] += district.staff;
+        }
+
+        let min_population = *population_counts.iter().min().unwrap() as f64;
+        let max_population = *population_counts.iter().max().unwrap() as f64;
+        let min_staff = *staff_counts.iter().min().unwrap() as f64;
+        let max_staff = *staff_counts.iter().max().unwrap() as f64;
+
+        let min = (min_population / max_population).min(min_staff / max_staff);
+        let score = (1e6 * min).round() as i64;
+        score
     }
 }
 
@@ -236,6 +265,7 @@ fn main() {
     let input = Input::read_input();
     let state = solve(&input);
     println!("{}", &state);
+    eprintln!("score: {}", state.calc_score(&input));
 }
 
 fn solve(input: &Input) -> State {
