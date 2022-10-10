@@ -1,9 +1,10 @@
-use std::time::Instant;
+use std::{collections::VecDeque, fmt::Display, time::Instant};
 
 #[allow(unused_imports)]
 use proconio::*;
 #[allow(unused_imports)]
 use rand::prelude::*;
+use rand_pcg::Pcg64Mcg;
 
 #[allow(unused_macros)]
 macro_rules! chmin {
@@ -177,7 +178,67 @@ impl District {
     }
 }
 
+#[derive(Debug, Clone)]
+struct State {
+    assigns: Vec<usize>,
+}
+
+impl State {
+    fn init(input: &Input, seed: u128) -> Self {
+        let mut rng = Pcg64Mcg::new(seed);
+        let mut assigns = vec![!0; input.district_count];
+
+        for i in 0..input.merged_count {
+            loop {
+                let j = rng.gen_range(0, input.district_count);
+
+                if assigns[j] == !0 {
+                    assigns[j] = i;
+                    break;
+                }
+            }
+        }
+
+        let mut queue = VecDeque::new();
+        for (i, &assign) in assigns.iter().enumerate() {
+            if assign != !0 {
+                queue.push_back((i, assign));
+            }
+        }
+
+        while let Some((i, assign)) = queue.pop_front() {
+            for &next in input.map[i].iter() {
+                if assigns[next] == !0 {
+                    assigns[next] = assign;
+                    queue.push_back((next, assign));
+                }
+            }
+        }
+
+        Self { assigns }
+    }
+}
+
+impl Display for State {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", self.assigns[0] + 1)?;
+
+        for assign in self.assigns[1..].iter() {
+            writeln!(f)?;
+            write!(f, "{}", assign + 1)?;
+        }
+
+        Ok(())
+    }
+}
+
 fn main() {
     let input = Input::read_input();
-    eprintln!("{}", input.map_size);
+    let state = solve(&input);
+    println!("{}", &state);
+}
+
+fn solve(input: &Input) -> State {
+    let init_state = State::init(input, 42);
+    init_state
 }
