@@ -465,6 +465,7 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
     let temp1 = 1e8;
     let mut inv_temp = 1.0 / temp0;
     let mut swap_candidates = vec![];
+    let mut swap_candidates_seen = vec![false; input.district_count];
 
     while time < 1.0 {
         all_iter += 1;
@@ -476,26 +477,28 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
 
         // 変形
         let pivot = rng.gen_range(0, input.district_count);
-        let target_district = *input.map[pivot].choose(&mut rng).unwrap();
+        let target_district1 = *input.map[pivot].choose(&mut rng).unwrap();
         let new_assign = state.assigns[pivot];
-        let old_assign = state.assigns[target_district];
+        let old_assign = state.assigns[target_district1];
 
         if new_assign == old_assign || state.assign_counts[old_assign] == 1 {
             continue;
         }
 
+        state.change_assign_without_score_calc(target_district1, new_assign);
+
+        if !state.check_connected(input, target_district1, old_assign) {
+            state.change_assign_without_score_calc(target_district1, old_assign);
+            continue;
+        }
+
+        state.change_assign_without_score_calc(target_district1, old_assign);
+
         let neigh_type = rng.gen_range(0, 2);
 
         if neigh_type != 0 {
-            state.change_assign_without_score_calc(target_district, new_assign);
-
-            if !state.check_connected(input, target_district, old_assign) {
-                state.change_assign_without_score_calc(target_district, old_assign);
-                continue;
-            }
-
-            state.change_assign_without_score_calc(target_district, old_assign);
-            state.change_assign(input, target_district, new_assign);
+            // 1個伸ばす
+            state.change_assign(input, target_district1, new_assign);
 
             // スコア計算
             let new_score = state.annealing_score;
@@ -511,15 +514,18 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
                     update_count += 1;
                 }
             } else {
-                state.change_assign(input, target_district, old_assign);
+                state.change_assign(input, target_district1, old_assign);
             }
         } else {
-            swap_candidates.clear();
-
+            // 1個伸ばす代わりに1個縮める
             for &i in state.assigns_inv[new_assign].values.iter() {
                 for &next in input.map[i].iter() {
-                    if next != target_district && state.assigns[next] == old_assign {
+                    if next != target_district1
+                        && state.assigns[next] == old_assign
+                        && !swap_candidates_seen[next]
+                    {
                         swap_candidates.push(i);
+                        swap_candidates_seen[i] = true;
                     }
                 }
             }
@@ -528,22 +534,27 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
                 continue;
             }
 
-            let target2 = *swap_candidates.choose(&mut rng).unwrap();
-            state.change_assign_without_score_calc(target_district, new_assign);
-            state.change_assign_without_score_calc(target2, old_assign);
+            let target_district2 = *swap_candidates.choose(&mut rng).unwrap();
 
-            if !state.check_connected(input, target_district, old_assign)
-                || !state.check_connected(input, target2, new_assign)
+            while let Some(v) = swap_candidates.pop() {
+                swap_candidates_seen[v] = false;
+            }
+
+            state.change_assign_without_score_calc(target_district1, new_assign);
+            state.change_assign_without_score_calc(target_district2, old_assign);
+
+            if !state.check_connected(input, target_district1, old_assign)
+                || !state.check_connected(input, target_district2, new_assign)
             {
-                state.change_assign_without_score_calc(target_district, old_assign);
-                state.change_assign_without_score_calc(target2, new_assign);
+                state.change_assign_without_score_calc(target_district1, old_assign);
+                state.change_assign_without_score_calc(target_district2, new_assign);
                 continue;
             }
 
-            state.change_assign_without_score_calc(target_district, old_assign);
-            state.change_assign_without_score_calc(target2, new_assign);
-            state.change_assign(input, target_district, new_assign);
-            state.change_assign(input, target2, old_assign);
+            state.change_assign_without_score_calc(target_district1, old_assign);
+            state.change_assign_without_score_calc(target_district2, new_assign);
+            state.change_assign(input, target_district1, new_assign);
+            state.change_assign(input, target_district2, old_assign);
 
             // スコア計算
             let new_score = state.annealing_score;
@@ -559,8 +570,8 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
                     update_count += 1;
                 }
             } else {
-                state.change_assign(input, target_district, old_assign);
-                state.change_assign(input, target2, new_assign);
+                state.change_assign(input, target_district1, old_assign);
+                state.change_assign(input, target_district2, new_assign);
             }
         }
 
