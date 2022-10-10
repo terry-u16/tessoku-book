@@ -456,6 +456,7 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
     let temp0 = 1e10;
     let temp1 = 1e8;
     let mut inv_temp = 1.0 / temp0;
+    let mut swap_candidates = vec![];
 
     while time < 1.0 {
         all_iter += 1;
@@ -475,31 +476,88 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
             continue;
         }
 
-        state.change_assign_without_score_calc(target_district, new_assign);
+        let neigh_type = rng.gen_range(0, 10);
 
-        if !state.check_connected(input, target_district, old_assign) {
+        if neigh_type != 0 {
+            state.change_assign_without_score_calc(target_district, new_assign);
+
+            if !state.check_connected(input, target_district, old_assign) {
+                state.change_assign_without_score_calc(target_district, old_assign);
+                continue;
+            }
+
             state.change_assign_without_score_calc(target_district, old_assign);
-            continue;
-        }
+            state.change_assign(input, target_district, new_assign);
 
-        state.change_assign_without_score_calc(target_district, old_assign);
-        state.change_assign(input, target_district, new_assign);
+            // スコア計算
+            let new_score = state.annealing_score;
+            let score_diff = new_score - current_score;
 
-        // スコア計算
-        let new_score = state.annealing_score;
-        let score_diff = new_score - current_score;
+            if score_diff >= 0 || rng.gen_bool(f64::exp(score_diff as f64 * inv_temp)) {
+                // 解の更新
+                current_score = new_score;
+                accepted_count += 1;
 
-        if score_diff >= 0 || rng.gen_bool(f64::exp(score_diff as f64 * inv_temp)) {
-            // 解の更新
-            current_score = new_score;
-            accepted_count += 1;
-
-            if chmax!(best_score, state.calc_score()) {
-                best_state = state.clone();
-                update_count += 1;
+                if chmax!(best_score, state.calc_score()) {
+                    best_state = state.clone();
+                    update_count += 1;
+                }
+            } else {
+                state.change_assign(input, target_district, old_assign);
             }
         } else {
-            state.change_assign(input, target_district, old_assign);
+            swap_candidates.clear();
+
+            for (i, &assign) in state.assigns.iter().enumerate() {
+                if assign != new_assign {
+                    continue;
+                }
+
+                for &next in input.map[i].iter() {
+                    if next != target_district && state.assigns[next] == old_assign {
+                        swap_candidates.push(i);
+                    }
+                }
+            }
+
+            if swap_candidates.len() == 0 {
+                continue;
+            }
+
+            let target2 = *swap_candidates.choose(&mut rng).unwrap();
+            state.change_assign_without_score_calc(target_district, new_assign);
+            state.change_assign_without_score_calc(target2, old_assign);
+
+            if !state.check_connected(input, target_district, old_assign)
+                || !state.check_connected(input, target2, new_assign)
+            {
+                state.change_assign_without_score_calc(target_district, old_assign);
+                state.change_assign_without_score_calc(target2, new_assign);
+                continue;
+            }
+
+            state.change_assign_without_score_calc(target_district, old_assign);
+            state.change_assign_without_score_calc(target2, new_assign);
+            state.change_assign(input, target_district, new_assign);
+            state.change_assign(input, target2, old_assign);
+
+            // スコア計算
+            let new_score = state.annealing_score;
+            let score_diff = new_score - current_score;
+
+            if score_diff >= 0 || rng.gen_bool(f64::exp(score_diff as f64 * inv_temp)) {
+                // 解の更新
+                current_score = new_score;
+                accepted_count += 1;
+
+                if chmax!(best_score, state.calc_score()) {
+                    best_state = state.clone();
+                    update_count += 1;
+                }
+            } else {
+                state.change_assign(input, target_district, old_assign);
+                state.change_assign(input, target2, new_assign);
+            }
         }
 
         valid_iter += 1;
