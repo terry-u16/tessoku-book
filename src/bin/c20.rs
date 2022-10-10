@@ -343,6 +343,11 @@ impl State {
         let score = (1e6 * min).round() as i64;
         score
     }
+
+    fn calc_mixed_score(&self, input: &Input, t: f64) -> f64 {
+        let score = self.calc_score(input);
+        self.annealing_score as f64 * (1.0 - t) + (score * score) as f64 * t * 1e-2
+    }
 }
 
 impl Display for State {
@@ -448,8 +453,9 @@ fn gen_init(input: &Input, seed: u128) -> State {
 fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
     let mut state = initial_state;
     let mut best_state = state.clone();
-    let mut current_score = state.annealing_score;
+    let mut current_score = state.calc_mixed_score(input, 0.0);
     let mut best_score = state.calc_score(input);
+    eprintln!("score_an   : {}", best_state.calc_annealing_score(input));
 
     let mut all_iter = 0;
     let mut valid_iter = 0;
@@ -461,7 +467,7 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
     let since = std::time::Instant::now();
     let mut time = 0.0;
 
-    let temp0 = 1e10;
+    let temp0 = 1e11;
     let temp1 = 1e8;
     let mut inv_temp = 1.0 / temp0;
 
@@ -491,13 +497,14 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
         }
 
         state.change_assign_without_score_calc(target_district, old_assign);
+        current_score = state.calc_mixed_score(input, time);
         state.change_assign(input, target_district, new_assign);
 
         // スコア計算
-        let new_score = state.annealing_score;
+        let new_score = state.calc_mixed_score(input, time);
         let score_diff = new_score - current_score;
 
-        if score_diff >= 0 || rng.gen_bool(f64::exp(score_diff as f64 * inv_temp)) {
+        if score_diff >= 0.0 || rng.gen_bool(f64::exp(score_diff * inv_temp)) {
             // 解の更新
             current_score = new_score;
             accepted_count += 1;
@@ -515,6 +522,7 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
 
     eprintln!("===== annealing =====");
     eprintln!("score      : {}", best_score);
+    eprintln!("score_an   : {}", best_state.calc_annealing_score(input));
     eprintln!("all iter   : {}", all_iter);
     eprintln!("valid iter : {}", valid_iter);
     eprintln!("accepted   : {}", accepted_count);
