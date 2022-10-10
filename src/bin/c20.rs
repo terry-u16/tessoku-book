@@ -363,34 +363,19 @@ fn main() {
 }
 
 fn solve(input: &Input) -> State {
-    const TRIAL_COUNT: usize = 3;
-    let input_elapsed = (Instant::now() - input.since).as_secs_f64();
-    let total_duration = 0.99 - input_elapsed;
-    let each_duration = total_duration / TRIAL_COUNT as f64;
-
-    let mut best_state = State::new(input, vec![0; input.district_count]);
-    let mut best_score = best_state.calc_score(input);
-
-    for trial in 0..TRIAL_COUNT {
-        let since = Instant::now();
-        let init_state = get_init_random(input, 998244353 * trial as u128);
-        let elapsed = (Instant::now() - since).as_secs_f64();
-        let state = annealing(input, init_state, each_duration - elapsed);
-
-        if chmax!(best_score, state.calc_score(input)) {
-            best_state = state;
-        }
-    }
-
-    best_state
+    let init_state = get_init_random(input);
+    let elapsed = (Instant::now() - input.since).as_secs_f64();
+    eprintln!("elapsed: {:.3}s", elapsed);
+    let state = annealing(input, init_state, 0.99 - elapsed);
+    state
 }
 
-fn get_init_random(input: &Input, seed_base: u128) -> State {
-    let mut best_state = gen_init(input, seed_base);
+fn get_init_random(input: &Input) -> State {
+    let mut best_state = gen_init(input, 42);
     let mut best_score = best_state.calc_annealing_score(input);
 
-    for seed in 0..20 {
-        let state = gen_init(input, seed_base + seed);
+    for seed in 0..50 {
+        let state = gen_init(input, seed);
         if chmax!(best_score, state.calc_annealing_score(input)) {
             best_state = state;
         }
