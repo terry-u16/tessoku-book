@@ -218,11 +218,16 @@ impl State {
         }
     }
 
-    fn change_assign(&mut self, input: &Input, district: usize, assign: usize) {
+    fn change_assign_without_score_calc(&mut self, district: usize, assign: usize) {
         let old = self.assigns[district];
         self.assign_counts[old] -= 1;
         self.assign_counts[assign] += 1;
         self.assigns[district] = assign;
+    }
+
+    fn change_assign(&mut self, input: &Input, district: usize, assign: usize) {
+        let old = self.assigns[district];
+        self.change_assign_without_score_calc(district, assign);
 
         let p = self.populations[old];
         let s = self.staffs[old];
@@ -478,11 +483,15 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
             continue;
         }
 
-        state.change_assign(input, target_district, new_assign);
+        state.change_assign_without_score_calc(target_district, new_assign);
 
         if !state.check_connected(input, target_district, old_assign) {
-            state.change_assign(input, target_district, old_assign);
+            state.change_assign_without_score_calc(target_district, old_assign);
+            continue;
         }
+
+        state.change_assign_without_score_calc(target_district, old_assign);
+        state.change_assign(input, target_district, new_assign);
 
         // スコア計算
         let new_score = state.annealing_score;
