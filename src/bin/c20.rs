@@ -462,7 +462,7 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
     let mut time = 0.0;
 
     let temp0 = 1e10;
-    let temp1 = 1e8;
+    let temp1 = 3e7;
     let mut inv_temp = 1.0 / temp0;
     let mut swap_candidates = vec![];
     let mut swap_candidates_seen = vec![false; input.district_count];
@@ -520,8 +520,8 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
             // 1個伸ばす代わりに1個縮める
             for &i in state.assigns_inv[new_assign].values.iter() {
                 for &next in input.map[i].iter() {
-                    if next != target_district1
-                        && state.assigns[next] == old_assign
+                    if state.assigns[next] == old_assign
+                        && next != target_district1
                         && !swap_candidates_seen[next]
                     {
                         swap_candidates.push(i);
