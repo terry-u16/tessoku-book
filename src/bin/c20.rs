@@ -350,17 +350,18 @@ fn main() {
 fn solve(input: &Input) -> State {
     let init_state = get_init(input);
     let elapsed = (Instant::now() - input.since).as_secs_f64();
+    eprintln!("elapsed: {:.3}s", elapsed);
     let state = annealing(input, init_state, 0.99 - elapsed);
     state
 }
 
 fn get_init(input: &Input) -> State {
     let mut best_state = State::init(input, 42);
-    let mut best_score = best_state.calc_score(input);
+    let mut best_score = best_state.calc_annealing_score(input);
 
     for seed in 0..100 {
         let state = State::init(input, seed);
-        if chmax!(best_score, state.calc_score(input)) {
+        if chmax!(best_score, state.calc_annealing_score(input)) {
             best_state = state;
         }
     }
