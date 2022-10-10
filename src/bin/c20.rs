@@ -456,7 +456,7 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
     let since = std::time::Instant::now();
     let mut time = 0.0;
 
-    let temp0 = 1e11;
+    let temp0 = 1e10;
     let temp1 = 1e8;
     let mut inv_temp = 1.0 / temp0;
 
