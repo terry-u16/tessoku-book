@@ -281,6 +281,30 @@ impl State {
         false
     }
 
+    fn calc_annealing_score(&self, input: &Input) -> i64 {
+        let mut population_counts = vec![0; input.merged_count];
+        let mut staff_counts = vec![0; input.merged_count];
+
+        for (assign, district) in self.assigns.iter().zip(input.districts.iter()) {
+            population_counts[*assign] += district.population;
+            staff_counts[*assign] += district.staff;
+        }
+
+        let mut score = 0;
+
+        for population in population_counts.iter() {
+            let diff = input.average_population - population;
+            score -= diff * diff;
+        }
+
+        for staff in staff_counts.iter() {
+            let diff = input.average_staff - staff;
+            score -= diff * diff * 2500;
+        }
+
+        score
+    }
+
     fn calc_score(&self, input: &Input) -> i64 {
         let mut population_counts = vec![0; input.merged_count];
         let mut staff_counts = vec![0; input.merged_count];
@@ -333,8 +357,8 @@ fn solve(input: &Input) -> State {
 fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
     let mut state = initial_state;
     let mut best_state = state.clone();
-    let mut current_score = state.calc_score(input);
-    let mut best_score = current_score;
+    let mut current_score = state.calc_annealing_score(input);
+    let mut best_score = state.calc_score(input);
 
     let mut all_iter = 0;
     let mut valid_iter = 0;
@@ -346,8 +370,8 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
     let since = std::time::Instant::now();
     let mut time = 0.0;
 
-    let temp0 = 1e4;
-    let temp1 = 1e3;
+    let temp0 = 1e12;
+    let temp1 = 1e9;
     let mut inv_temp = 1.0 / temp0;
 
     while time < 1.0 {
@@ -375,7 +399,7 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
         }
 
         // スコア計算
-        let new_score = state.calc_score(input);
+        let new_score = state.calc_annealing_score(input);
         let score_diff = new_score - current_score;
 
         if score_diff >= 0 || rng.gen_bool(f64::exp(score_diff as f64 * inv_temp)) {
@@ -383,7 +407,7 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
             current_score = new_score;
             accepted_count += 1;
 
-            if chmax!(best_score, current_score) {
+            if chmax!(best_score, state.calc_score(input)) {
                 best_state = state.clone();
                 update_count += 1;
             }
