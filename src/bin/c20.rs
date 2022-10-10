@@ -182,6 +182,7 @@ impl District {
 struct State {
     assigns: Vec<usize>,
     assign_counts: Vec<i32>,
+    seen_dfs: Vec<bool>,
 }
 
 impl State {
@@ -222,10 +223,62 @@ impl State {
             assign_counts[*assign] += 1;
         }
 
+        let seen_dfs = vec![false; input.district_count];
+
         Self {
             assigns,
             assign_counts,
+            seen_dfs,
         }
+    }
+
+    fn change_assign(&mut self, district: usize, assign: usize) {
+        let old = self.assigns[district];
+        self.assign_counts[old] -= 1;
+        self.assign_counts[assign] += 1;
+        self.assigns[district] = assign;
+    }
+
+    fn check_connected(
+        &mut self,
+        input: &Input,
+        changed_district: usize,
+        target_merged: usize,
+    ) -> bool {
+        fn dfs(state: &mut State, input: &Input, current: usize, target: usize) -> i32 {
+            state.seen_dfs[current] = true;
+            let mut count = 1;
+
+            for &next in input.map[current].iter() {
+                if state.assigns[next] == target && !state.seen_dfs[next] {
+                    count += dfs(state, input, next, target);
+                }
+            }
+
+            count
+        }
+
+        fn clean_dfs(state: &mut State, input: &Input, current: usize) {
+            state.seen_dfs[current] = false;
+
+            for &next in input.map[current].iter() {
+                if state.seen_dfs[next] {
+                    clean_dfs(state, input, next);
+                }
+            }
+        }
+
+        for &next in input.map[changed_district].iter() {
+            if self.assigns[next] != target_merged {
+                continue;
+            }
+
+            let ok = dfs(self, input, next, target_merged) == self.assign_counts[target_merged];
+            clean_dfs(self, input, next);
+            return ok;
+        }
+
+        false
     }
 
     fn calc_score(&self, input: &Input) -> i64 {
@@ -264,11 +317,90 @@ impl Display for State {
 fn main() {
     let input = Input::read_input();
     let state = solve(&input);
+    let elapsed = (Instant::now() - input.since).as_secs_f64();
     println!("{}", &state);
     eprintln!("score: {}", state.calc_score(&input));
+    eprintln!("elapsed: {:.3}s", elapsed);
 }
 
 fn solve(input: &Input) -> State {
     let init_state = State::init(input, 42);
-    init_state
+    let elapsed = (Instant::now() - input.since).as_secs_f64();
+    let state = annealing(input, init_state, 0.99 - elapsed);
+    state
+}
+
+fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
+    let mut state = initial_state;
+    let mut best_state = state.clone();
+    let mut current_score = state.calc_score(input);
+    let mut best_score = current_score;
+
+    let mut all_iter = 0;
+    let mut valid_iter = 0;
+    let mut accepted_count = 0;
+    let mut update_count = 0;
+    let mut rng = rand_pcg::Pcg64Mcg::new(42);
+
+    let duration_inv = 1.0 / duration;
+    let since = std::time::Instant::now();
+    let mut time = 0.0;
+
+    let temp0 = 1e4;
+    let temp1 = 1e3;
+    let mut inv_temp = 1.0 / temp0;
+
+    while time < 1.0 {
+        all_iter += 1;
+        if (all_iter & ((1 << 10) - 1)) == 0 {
+            time = (std::time::Instant::now() - since).as_secs_f64() * duration_inv;
+            let temp = f64::powf(temp0, 1.0 - time) * f64::powf(temp1, time);
+            inv_temp = 1.0 / temp;
+        }
+
+        // 変形
+        let pivot = rng.gen_range(0, input.district_count);
+        let target_district = *input.map[pivot].choose(&mut rng).unwrap();
+        let new_assign = state.assigns[pivot];
+        let old_assign = state.assigns[target_district];
+
+        if new_assign == old_assign || state.assign_counts[old_assign] == 1 {
+            continue;
+        }
+
+        state.change_assign(target_district, new_assign);
+
+        if !state.check_connected(input, target_district, old_assign) {
+            state.change_assign(target_district, old_assign);
+        }
+
+        // スコア計算
+        let new_score = state.calc_score(input);
+        let score_diff = new_score - current_score;
+
+        if score_diff >= 0 || rng.gen_bool(f64::exp(score_diff as f64 * inv_temp)) {
+            // 解の更新
+            current_score = new_score;
+            accepted_count += 1;
+
+            if chmax!(best_score, current_score) {
+                best_state = state.clone();
+                update_count += 1;
+            }
+        } else {
+            state.change_assign(target_district, old_assign);
+        }
+
+        valid_iter += 1;
+    }
+
+    eprintln!("===== annealing =====");
+    eprintln!("score      : {}", best_score);
+    eprintln!("all iter   : {}", all_iter);
+    eprintln!("valid iter : {}", valid_iter);
+    eprintln!("accepted   : {}", accepted_count);
+    eprintln!("updated    : {}", update_count);
+    eprintln!("");
+
+    best_state
 }
