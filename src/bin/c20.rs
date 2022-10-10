@@ -518,7 +518,7 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
             }
         } else {
             // 1個伸ばす代わりに1個縮める
-            for &i in state.assigns_inv[new_assign].values.iter() {
+            for &i in state.assigns_inv[new_assign].iter() {
                 for &next in input.map[i].iter() {
                     if state.assigns[next] == old_assign
                         && next != target_district1
@@ -593,7 +593,7 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
 mod light_set {
     #[derive(Debug, Clone)]
     pub struct LightSet {
-        pub values: Vec<usize>,
+        values: Vec<usize>,
         positions: Vec<usize>,
     }
 
@@ -605,11 +605,13 @@ mod light_set {
         }
 
         pub fn add(&mut self, v: usize) {
+            debug_assert!(!self.contains(v));
             self.positions[v] = self.values.len();
             self.values.push(v);
         }
 
         pub fn remove(&mut self, v: usize) {
+            debug_assert!(self.contains(v));
             let position = self.positions[v];
             let last = *self.values.last().unwrap();
             self.values[position] = last;
@@ -618,8 +620,76 @@ mod light_set {
             self.positions[v] = !0;
         }
 
+        pub fn clear(&mut self) {
+            while let Some(v) = self.values.pop() {
+                self.positions[v] = !0;
+            }
+        }
+
+        pub fn iter(&self) -> core::slice::Iter<'_, usize> {
+            self.values.iter()
+        }
+
         pub fn contains(&self, v: usize) -> bool {
             self.positions[v] != !0
+        }
+    }
+
+    #[cfg(test)]
+    mod test {
+        use itertools::Itertools;
+
+        use super::LightSet;
+
+        #[test]
+        fn add_test() {
+            let mut set = LightSet::new(5);
+            set.add(0);
+            set.add(2);
+            set.add(4);
+
+            let result = set.iter().copied().sorted().collect_vec();
+            assert_eq!(result, vec![0, 2, 4]);
+        }
+
+        #[test]
+        fn remove_test() {
+            let mut set = LightSet::new(5);
+            set.add(0);
+            set.add(2);
+            set.add(3);
+            set.add(4);
+            set.remove(2);
+
+            let result = set.iter().copied().sorted().collect_vec();
+            assert_eq!(result, vec![0, 3, 4]);
+        }
+
+        #[test]
+        fn clear_test() {
+            let mut set = LightSet::new(5);
+            set.add(0);
+            set.add(2);
+            set.add(3);
+            set.add(4);
+            set.remove(2);
+            set.clear();
+
+            let result = set.iter().copied().sorted().collect_vec();
+            assert_eq!(result, vec![]);
+        }
+
+        #[test]
+        fn contains_test() {
+            let mut set = LightSet::new(5);
+            set.add(0);
+            set.add(2);
+            set.add(3);
+            set.add(4);
+            set.remove(2);
+
+            assert!(set.contains(0));
+            assert!(!set.contains(2));
         }
     }
 }
