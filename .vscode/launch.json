@@ -1,0 +1,5595 @@
+{
+    // IntelliSense を使用して利用可能な属性を学べます。
+    // 既存の属性の説明をホバーして表示します。
+    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a01'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a01",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a01",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a01'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a01",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a01",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a02'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a02",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a02",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a02'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a02",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a02",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a03'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a03",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a03",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a03'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a03",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a03",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a04'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a04",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a04",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a04'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a04",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a04",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a05'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a05",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a05",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a05'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a05",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a05",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a06'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a06",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a06",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a06'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a06",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a06",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a07'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a07",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a07",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a07'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a07",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a07",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a08'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a08",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a08",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a08'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a08",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a08",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a09'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a09",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a09",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a09'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a09",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a09",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a10'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a10",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a10",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a10'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a10",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a10",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a11'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a11",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a11",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a11'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a11",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a11",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a12'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a12",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a12",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a12'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a12",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a12",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a13'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a13",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a13",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a13'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a13",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a13",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a14'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a14",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a14",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a14'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a14",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a14",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a15'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a15",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a15",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a15'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a15",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a15",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a16'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a16",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a16",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a16'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a16",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a16",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a17'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a17",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a17",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a17'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a17",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a17",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a18'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a18",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a18",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a18'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a18",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a18",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a19'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a19",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a19",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a19'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a19",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a19",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a20'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a20",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a20",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a20'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a20",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a20",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a21'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a21",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a21",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a21'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a21",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a21",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a22'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a22",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a22",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a22'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a22",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a22",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a23'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a23",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a23",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a23'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a23",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a23",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a24'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a24",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a24",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a24'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a24",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a24",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a25'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a25",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a25",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a25'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a25",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a25",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a26'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a26",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a26",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a26'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a26",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a26",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a27'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a27",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a27",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a27'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a27",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a27",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a28'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a28",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a28",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a28'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a28",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a28",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a29'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a29",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a29",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a29'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a29",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a29",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a30'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a30",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a30",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a30'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a30",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a30",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a31'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a31",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a31",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a31'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a31",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a31",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a32'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a32",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a32",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a32'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a32",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a32",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a33'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a33",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a33",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a33'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a33",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a33",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a34'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a34",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a34",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a34'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a34",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a34",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a35'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a35",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a35",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a35'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a35",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a35",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a36'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a36",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a36",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a36'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a36",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a36",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a37'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a37",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a37",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a37'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a37",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a37",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a38'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a38",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a38",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a38'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a38",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a38",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a39'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a39",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a39",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a39'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a39",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a39",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a40'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a40",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a40",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a40'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a40",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a40",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a41'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a41",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a41",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a41'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a41",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a41",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a42'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a42",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a42",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a42'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a42",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a42",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a43'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a43",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a43",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a43'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a43",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a43",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a44'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a44",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a44",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a44'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a44",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a44",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a45'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a45",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a45",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a45'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a45",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a45",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a46'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a46",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a46",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a46'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a46",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a46",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a49'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a49",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a49",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a49'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a49",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a49",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a50'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a50",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a50",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a50'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a50",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a50",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a51'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a51",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a51",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a51'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a51",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a51",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a52'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a52",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a52",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a52'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a52",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a52",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a53'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a53",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a53",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a53'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a53",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a53",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a54'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a54",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a54",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a54'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a54",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a54",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a55'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a55",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a55",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a55'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a55",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a55",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a56'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a56",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a56",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a56'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a56",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a56",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a57'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a57",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a57",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a57'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a57",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a57",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a58'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a58",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a58",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a58'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a58",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a58",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a59'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a59",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a59",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a59'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a59",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a59",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a60'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a60",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a60",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a60'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a60",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a60",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a61'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a61",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a61",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a61'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a61",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a61",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a62'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a62",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a62",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a62'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a62",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a62",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a63'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a63",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a63",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a63'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a63",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a63",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a64'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a64",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a64",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a64'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a64",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a64",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a65'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a65",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a65",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a65'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a65",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a65",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a66'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a66",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a66",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a66'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a66",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a66",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a67'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a67",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a67",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a67'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a67",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a67",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a68'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a68",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a68",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a68'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a68",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a68",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a69'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a69",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a69",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a69'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a69",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a69",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a70'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a70",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a70",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a70'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a70",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a70",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a71'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a71",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a71",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a71'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a71",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a71",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a72'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a72",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a72",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a72'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a72",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a72",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a73'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a73",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a73",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a73'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a73",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a73",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a74'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a74",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a74",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a74'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a74",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a74",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a75'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a75",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a75",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a75'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a75",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a75",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a76'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a76",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a76",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a76'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a76",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a76",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-a77'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-a77",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a77",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-a77'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-a77",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-a77",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b01'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b01",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b01",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b01'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b01",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b01",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b02'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b02",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b02",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b02'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b02",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b02",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b03'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b03",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b03",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b03'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b03",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b03",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b04'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b04",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b04",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b04'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b04",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b04",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b06'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b06",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b06",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b06'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b06",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b06",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b07'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b07",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b07",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b07'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b07",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b07",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b08'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b08",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b08",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b08'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b08",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b08",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b09'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b09",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b09",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b09'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b09",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b09",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b11'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b11",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b11",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b11'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b11",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b11",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b12'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b12",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b12",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b12'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b12",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b12",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b13'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b13",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b13",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b13'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b13",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b13",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b14'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b14",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b14",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b14'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b14",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b14",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b16'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b16",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b16",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b16'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b16",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b16",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b17'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b17",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b17",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b17'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b17",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b17",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b18'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b18",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b18",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b18'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b18",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b18",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b19'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b19",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b19",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b19'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b19",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b19",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b20'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b20",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b20",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b20'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b20",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b20",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b21'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b21",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b21",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b21'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b21",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b21",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b23'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b23",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b23",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b23'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b23",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b23",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b24'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b24",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b24",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b24'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b24",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b24",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b26'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b26",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b26",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b26'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b26",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b26",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b27'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b27",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b27",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b27'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b27",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b27",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b28'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b28",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b28",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b28'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b28",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b28",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b29'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b29",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b29",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b29'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b29",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b29",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b30'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b30",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b30",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b30'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b30",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b30",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b31'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b31",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b31",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b31'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b31",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b31",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b32'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b32",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b32",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b32'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b32",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b32",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b33'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b33",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b33",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b33'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b33",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b33",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b34'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b34",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b34",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b34'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b34",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b34",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b36'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b36",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b36",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b36'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b36",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b36",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b37'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b37",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b37",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b37'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b37",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b37",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b38'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b38",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b38",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b38'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b38",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b38",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b39'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b39",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b39",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b39'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b39",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b39",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b40'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b40",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b40",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b40'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b40",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b40",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b41'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b41",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b41",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b41'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b41",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b41",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b42'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b42",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b42",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b42'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b42",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b42",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b43'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b43",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b43",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b43'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b43",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b43",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b44'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b44",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b44",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b44'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b44",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b44",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b45'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b45",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b45",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b45'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b45",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b45",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b51'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b51",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b51",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b51'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b51",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b51",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b52'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b52",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b52",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b52'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b52",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b52",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b54'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b54",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b54",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b54'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b54",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b54",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b55'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b55",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b55",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b55'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b55",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b55",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b56'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b56",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b56",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b56'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b56",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b56",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b57'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b57",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b57",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b57'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b57",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b57",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b58'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b58",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b58",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b58'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b58",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b58",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b59'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b59",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b59",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b59'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b59",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b59",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b61'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b61",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b61",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b61'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b61",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b61",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b62'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b62",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b62",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b62'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b62",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b62",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b63'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b63",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b63",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b63'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b63",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b63",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b64'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b64",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b64",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b64'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b64",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b64",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b65'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b65",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b65",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b65'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b65",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b65",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b66'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b66",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b66",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b66'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b66",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b66",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b67'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b67",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b67",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b67'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b67",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b67",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b68'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b68",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b68",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b68'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b68",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b68",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-b69'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-b69",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b69",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-b69'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-b69",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-b69",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c01'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c01",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c01",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c01'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c01",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c01",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c02'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c02",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c02",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c02'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c02",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c02",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c03'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c03",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c03",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c03'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c03",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c03",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c04'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c04",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c04",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c04'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c04",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c04",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c05'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c05",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c05",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c05'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c05",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c05",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c06'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c06",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c06",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c06'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c06",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c06",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c07'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c07",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c07",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c07'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c07",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c07",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c08'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c08",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c08",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c08'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c08",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c08",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c09'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c09",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c09",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c09'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c09",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c09",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c10'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c10",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c10",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c10'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c10",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c10",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c11'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c11",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c11",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c11'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c11",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c11",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c12'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c12",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c12",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c12'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c12",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c12",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c13'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c13",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c13",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c13'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c13",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c13",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c14'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c14",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c14",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c14'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c14",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c14",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c15'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c15",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c15",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c15'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c15",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c15",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c16'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c16",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c16",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c16'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c16",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c16",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c17'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c17",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c17",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c17'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c17",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c17",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c18'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c18",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c18",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c18'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c18",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c18",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c19'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c19",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c19",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c19'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c19",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c19",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tessoku-book-c20'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=tessoku-book-c20",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c20",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tessoku-book-c20'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tessoku-book-c20",
+                    "--package=tessoku-book"
+                ],
+                "filter": {
+                    "name": "tessoku-book-c20",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
