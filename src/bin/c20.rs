@@ -1,5 +1,6 @@
-use std::{collections::VecDeque, fmt::Display, time::Instant};
+use std::{fmt::Display, time::Instant};
 
+use light_set::LightSet;
 #[allow(unused_imports)]
 use proconio::*;
 #[allow(unused_imports)]
@@ -66,7 +67,7 @@ macro_rules! mat {
 
 #[derive(Debug, Clone)]
 struct Input {
-    map_size: usize,
+    _map_size: usize,
     district_count: usize,
     merged_count: usize,
     average_population: i64,
@@ -116,7 +117,7 @@ impl Input {
         let map = Self::gen_map(raw_map, map_size, district_count);
 
         Self {
-            map_size,
+            _map_size: map_size,
             district_count,
             merged_count,
             average_population,
@@ -181,6 +182,7 @@ impl District {
 #[derive(Debug, Clone)]
 struct State {
     assigns: Vec<usize>,
+    assigns_inv: Vec<LightSet>,
     assign_counts: Vec<i32>,
     seen_dfs: Vec<bool>,
     populations: Vec<i64>,
@@ -191,11 +193,13 @@ struct State {
 impl State {
     fn new(input: &Input, assigns: Vec<usize>) -> Self {
         let mut assign_counts = vec![0; input.merged_count];
+        let mut assigns_inv = vec![LightSet::new(input.district_count); input.merged_count];
         let mut populations = vec![0; input.merged_count];
         let mut staffs = vec![0; input.merged_count];
 
         for (i, &assign) in assigns.iter().enumerate() {
             assign_counts[assign] += 1;
+            assigns_inv[assign].add(i);
             populations[assign] += input.districts[i].population;
             staffs[assign] += input.districts[i].staff;
         }
@@ -210,6 +214,7 @@ impl State {
 
         Self {
             assigns,
+            assigns_inv,
             assign_counts,
             seen_dfs,
             populations,
@@ -228,6 +233,9 @@ impl State {
     fn change_assign(&mut self, input: &Input, district: usize, assign: usize) {
         let old = self.assigns[district];
         self.change_assign_without_score_calc(district, assign);
+
+        self.assigns_inv[old].remove(district);
+        self.assigns_inv[assign].add(district);
 
         let p = self.populations[old];
         let s = self.staffs[old];
@@ -476,7 +484,7 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
             continue;
         }
 
-        let neigh_type = rng.gen_range(0, 10);
+        let neigh_type = rng.gen_range(0, 2);
 
         if neigh_type != 0 {
             state.change_assign_without_score_calc(target_district, new_assign);
@@ -508,11 +516,7 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
         } else {
             swap_candidates.clear();
 
-            for (i, &assign) in state.assigns.iter().enumerate() {
-                if assign != new_assign {
-                    continue;
-                }
-
+            for &i in state.assigns_inv[new_assign].values.iter() {
                 for &next in input.map[i].iter() {
                     if next != target_district && state.assigns[next] == old_assign {
                         swap_candidates.push(i);
@@ -572,4 +576,39 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
     eprintln!("");
 
     best_state
+}
+
+#[allow(dead_code)]
+mod light_set {
+    #[derive(Debug, Clone)]
+    pub struct LightSet {
+        pub values: Vec<usize>,
+        positions: Vec<usize>,
+    }
+
+    impl LightSet {
+        pub fn new(n: usize) -> Self {
+            let values = vec![];
+            let positions = vec![!0; n];
+            Self { values, positions }
+        }
+
+        pub fn add(&mut self, v: usize) {
+            self.positions[v] = self.values.len();
+            self.values.push(v);
+        }
+
+        pub fn remove(&mut self, v: usize) {
+            let position = self.positions[v];
+            let last = *self.values.last().unwrap();
+            self.values[position] = last;
+            self.values.pop();
+            self.positions[last] = position;
+            self.positions[v] = !0;
+        }
+
+        pub fn contains(&self, v: usize) -> bool {
+            self.positions[v] != !0
+        }
+    }
 }
