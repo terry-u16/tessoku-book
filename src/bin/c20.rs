@@ -183,14 +183,27 @@ struct State {
     assigns: Vec<usize>,
     assign_counts: Vec<i32>,
     seen_dfs: Vec<bool>,
+    populations: Vec<i64>,
+    staffs: Vec<i64>,
+    annealing_score: i64,
 }
 
 impl State {
     fn new(input: &Input, assigns: Vec<usize>) -> Self {
         let mut assign_counts = vec![0; input.merged_count];
+        let mut populations = vec![0; input.district_count];
+        let mut staffs = vec![0; input.district_count];
 
-        for assign in assigns.iter() {
-            assign_counts[*assign] += 1;
+        for (i, &assign) in assigns.iter().enumerate() {
+            assign_counts[assign] += 1;
+            populations[assign] += input.districts[i].population;
+            staffs[assign] += input.districts[i].staff;
+        }
+
+        let mut annealing_score = 0;
+
+        for (&population, &staff) in populations.iter().zip(staffs.iter()) {
+            annealing_score += State::calc_annealing_score_one(input, population, staff);
         }
 
         let seen_dfs = vec![false; input.district_count];
@@ -199,14 +212,37 @@ impl State {
             assigns,
             assign_counts,
             seen_dfs,
+            populations,
+            staffs,
+            annealing_score,
         }
     }
 
-    fn change_assign(&mut self, district: usize, assign: usize) {
+    fn change_assign(&mut self, input: &Input, district: usize, assign: usize) {
         let old = self.assigns[district];
         self.assign_counts[old] -= 1;
         self.assign_counts[assign] += 1;
         self.assigns[district] = assign;
+
+        let p = self.populations[old];
+        let s = self.staffs[old];
+        self.annealing_score -= State::calc_annealing_score_one(input, p, s);
+        let p = self.populations[assign];
+        let s = self.staffs[assign];
+        self.annealing_score -= State::calc_annealing_score_one(input, p, s);
+
+        let district = &input.districts[district];
+        self.populations[old] -= district.population;
+        self.staffs[old] -= district.staff;
+        self.populations[assign] += district.population;
+        self.staffs[assign] += district.staff;
+
+        let p = self.populations[old];
+        let s = self.staffs[old];
+        self.annealing_score += State::calc_annealing_score_one(input, p, s);
+        let p = self.populations[assign];
+        let s = self.staffs[assign];
+        self.annealing_score += State::calc_annealing_score_one(input, p, s);
     }
 
     fn check_connected(
@@ -272,6 +308,15 @@ impl State {
             score -= diff * diff * 2500;
         }
 
+        score
+    }
+
+    fn calc_annealing_score_one(input: &Input, population: i64, staff: i64) -> i64 {
+        let mut score = 0;
+        let diff = input.average_population - population;
+        score -= diff * diff;
+        let diff = input.average_staff - staff;
+        score -= diff * diff * 2500;
         score
     }
 
@@ -360,7 +405,7 @@ fn gen_init(input: &Input, seed: u128) -> State {
     }
 
     for _ in 0..(input.district_count - input.merged_count) {
-        let mut best_score = std::i64::MAX;
+        let mut best_score = std::i64::MIN;
         let mut best_op = (!0, !0);
 
         for (i, &assign) in assigns.iter().enumerate() {
@@ -369,27 +414,18 @@ fn gen_init(input: &Input, seed: u128) -> State {
             }
 
             for &next in input.map[i].iter() {
-                fn score(input: &Input, population: i64, staff: i64) -> i64 {
-                    let mut score = 0;
-                    let diff = input.average_population - population;
-                    score += diff * diff;
-                    let diff = input.average_staff - staff;
-                    score += diff * diff * 2500;
-                    score
-                }
-
                 if assigns[next] != !0 {
                     continue;
                 }
 
                 let mut population = population_count[assign];
                 let mut staff = staff_count[assign];
-                let current_score = score(input, population, staff);
+                let current_score = State::calc_annealing_score_one(input, population, staff);
                 population += input.districts[next].population;
                 staff += input.districts[next].staff;
-                let new_score = score(input, population, staff);
+                let new_score = State::calc_annealing_score_one(input, population, staff);
 
-                if chmin!(best_score, new_score - current_score) {
+                if chmax!(best_score, new_score - current_score) {
                     best_op = (next, assign);
                 }
             }
@@ -407,7 +443,7 @@ fn gen_init(input: &Input, seed: u128) -> State {
 fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
     let mut state = initial_state;
     let mut best_state = state.clone();
-    let mut current_score = state.calc_annealing_score(input);
+    let mut current_score = state.annealing_score;
     let mut best_score = state.calc_score(input);
 
     let mut all_iter = 0;
@@ -442,14 +478,14 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
             continue;
         }
 
-        state.change_assign(target_district, new_assign);
+        state.change_assign(input, target_district, new_assign);
 
         if !state.check_connected(input, target_district, old_assign) {
-            state.change_assign(target_district, old_assign);
+            state.change_assign(input, target_district, old_assign);
         }
 
         // スコア計算
-        let new_score = state.calc_annealing_score(input);
+        let new_score = state.annealing_score;
         let score_diff = new_score - current_score;
 
         if score_diff >= 0 || rng.gen_bool(f64::exp(score_diff as f64 * inv_temp)) {
@@ -462,7 +498,7 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
                 update_count += 1;
             }
         } else {
-            state.change_assign(target_district, old_assign);
+            state.change_assign(input, target_district, old_assign);
         }
 
         valid_iter += 1;
