@@ -1,0 +1,49 @@
+{
+  "ProblemOption": {
+    "ProblemName": "tessoku-book-c20",
+    "TimeLimit": "00:00:01"
+  },
+  "RunnerOption": {
+    "StartSeed": 0,
+    "EndSeed": 100,
+    "ReferenceScore": 1000000,
+    "LocalParallelCount": 16,
+    "CloudParallelCount": 300,
+    "SummaryFilePath": ".\\data\\score_history.txt",
+    "ResultDirectoryPath": ".\\data\\results"
+  },
+  "ExecutionOption": {
+    "ScoreRegex": "Score = (?<score>\\d+)",
+    "SeedFormat": "000",
+    "Timeout": "00:00:30",
+    "LocalExecutionSteps": [
+      {
+        "ExecutionCommand": "tessoku-book-c20.exe",
+        "StdInPath": "data/in/in{SEED}.txt",
+        "StdOutPath": null,
+        "StdErrorPath": null
+      }
+    ],
+    "CloudExecutionSteps": [
+      {
+        "ExecutionCommand": "main",
+        "StdInPath": "in/{SEED}.txt",
+        "StdOutPath": null,
+        "StdErrorPath": null
+      }
+    ],
+    "Files": [
+      "main",
+      "in/{SEED}.txt"
+    ]
+  },
+  "CompileOption": {
+    "ExeName": "main",
+    "Files": [
+      {
+        "Source": "src/bin/c20.rs",
+        "Destination": "src/bin/main.rs"
+      }
+    ]
+  }
+}

@@ -319,7 +319,7 @@ fn main() {
     let state = solve(&input);
     let elapsed = (Instant::now() - input.since).as_secs_f64();
     println!("{}", &state);
-    eprintln!("score: {}", state.calc_score(&input));
+    eprintln!("Score = {}", state.calc_score(&input));
     eprintln!("elapsed: {:.3}s", elapsed);
 }
 
