@@ -191,8 +191,8 @@ struct State {
 impl State {
     fn new(input: &Input, assigns: Vec<usize>) -> Self {
         let mut assign_counts = vec![0; input.merged_count];
-        let mut populations = vec![0; input.district_count];
-        let mut staffs = vec![0; input.district_count];
+        let mut populations = vec![0; input.merged_count];
+        let mut staffs = vec![0; input.merged_count];
 
         for (i, &assign) in assigns.iter().enumerate() {
             assign_counts[assign] += 1;
@@ -325,19 +325,11 @@ impl State {
         score
     }
 
-    fn calc_score(&self, input: &Input) -> i64 {
-        let mut population_counts = vec![0; input.merged_count];
-        let mut staff_counts = vec![0; input.merged_count];
-
-        for (assign, district) in self.assigns.iter().zip(input.districts.iter()) {
-            population_counts[*assign] += district.population;
-            staff_counts[*assign] += district.staff;
-        }
-
-        let min_population = *population_counts.iter().min().unwrap() as f64;
-        let max_population = *population_counts.iter().max().unwrap() as f64;
-        let min_staff = *staff_counts.iter().min().unwrap() as f64;
-        let max_staff = *staff_counts.iter().max().unwrap() as f64;
+    fn calc_score(&self) -> i64 {
+        let min_population = *self.populations.iter().min().unwrap() as f64;
+        let max_population = *self.populations.iter().max().unwrap() as f64;
+        let min_staff = *self.staffs.iter().min().unwrap() as f64;
+        let max_staff = *self.staffs.iter().max().unwrap() as f64;
 
         let min = (min_population / max_population).min(min_staff / max_staff);
         let score = (1e6 * min).round() as i64;
@@ -363,7 +355,7 @@ fn main() {
     let state = solve(&input);
     let elapsed = (Instant::now() - input.since).as_secs_f64();
     println!("{}", &state);
-    eprintln!("Score = {}", state.calc_score(&input));
+    eprintln!("Score = {}", state.calc_score());
     eprintln!("elapsed: {:.3}s", elapsed);
 }
 
@@ -449,7 +441,7 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
     let mut state = initial_state;
     let mut best_state = state.clone();
     let mut current_score = state.annealing_score;
-    let mut best_score = state.calc_score(input);
+    let mut best_score = state.calc_score();
 
     let mut all_iter = 0;
     let mut valid_iter = 0;
@@ -502,7 +494,7 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
             current_score = new_score;
             accepted_count += 1;
 
-            if chmax!(best_score, state.calc_score(input)) {
+            if chmax!(best_score, state.calc_score()) {
                 best_state = state.clone();
                 update_count += 1;
             }
