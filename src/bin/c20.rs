@@ -456,6 +456,7 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
     let temp0 = 1e10;
     let temp1 = 1e8;
     let mut inv_temp = 1.0 / temp0;
+    let mut candidates = vec![];
 
     while time < 1.0 {
         all_iter += 1;
@@ -467,11 +468,24 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
 
         // 変形
         let pivot = rng.gen_range(0, input.district_count);
-        let target_district = *input.map[pivot].choose(&mut rng).unwrap();
         let new_assign = state.assigns[pivot];
+        candidates.clear();
+
+        for &next in input.map[pivot].iter() {
+            let next_assign = state.assigns[next];
+            if next_assign != new_assign {
+                candidates.push(next);
+            }
+        }
+
+        if candidates.len() == 0 {
+            continue;
+        }
+
+        let target_district = *candidates.choose(&mut rng).unwrap();
         let old_assign = state.assigns[target_district];
 
-        if new_assign == old_assign || state.assign_counts[old_assign] == 1 {
+        if state.assign_counts[old_assign] == 1 {
             continue;
         }
 
