@@ -7,7 +7,7 @@
     "StartSeed": 0,
     "EndSeed": 100,
     "ReferenceScore": 1000000,
-    "LocalParallelCount": 16,
+    "LocalParallelCount": 32,
     "CloudParallelCount": 300,
     "SummaryFilePath": ".\\data\\score_history.txt",
     "ResultDirectoryPath": ".\\data\\results"

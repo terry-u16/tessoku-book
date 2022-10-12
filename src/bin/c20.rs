@@ -358,20 +358,44 @@ impl Display for State {
     }
 }
 
+#[derive(Debug, Clone, Copy)]
+struct Parameter {
+    temp_high: f64,
+    temp_low: f64,
+    duration: f64,
+}
+
+impl Parameter {
+    fn new() -> Self {
+        let temp_high = 1e10;
+        let temp_low = 3e7;
+        let duration_mul =
+            std::env::var("DURATION_MUL").map_or_else(|_| 1.0, |val| val.parse::<f64>().unwrap());
+        let duration = 0.99 * duration_mul;
+
+        Self {
+            temp_high,
+            temp_low,
+            duration,
+        }
+    }
+}
+
 fn main() {
     let input = Input::read_input();
-    let state = solve(&input);
+    let params = Parameter::new();
+    let state = solve(&input, &params);
     let elapsed = (Instant::now() - input.since).as_secs_f64();
     println!("{}", &state);
     eprintln!("Score = {}", state.calc_score());
     eprintln!("elapsed: {:.3}s", elapsed);
 }
 
-fn solve(input: &Input) -> State {
+fn solve(input: &Input, params: &Parameter) -> State {
     let init_state = get_init_random(input);
     let elapsed = (Instant::now() - input.since).as_secs_f64();
     eprintln!("elapsed: {:.3}s", elapsed);
-    let state = annealing(input, init_state, 0.99 - elapsed);
+    let state = annealing(input, params, init_state, params.duration - elapsed);
     state
 }
 
@@ -445,7 +469,7 @@ fn gen_init(input: &Input, seed: u128) -> State {
     State::new(input, assigns)
 }
 
-fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
+fn annealing(input: &Input, params: &Parameter, initial_state: State, duration: f64) -> State {
     let mut state = initial_state;
     let mut best_state = state.clone();
     let mut current_score = state.annealing_score;
@@ -461,8 +485,8 @@ fn annealing(input: &Input, initial_state: State, duration: f64) -> State {
     let since = std::time::Instant::now();
     let mut time = 0.0;
 
-    let temp0 = 1e10;
-    let temp1 = 3e7;
+    let temp0 = params.temp_high;
+    let temp1 = params.temp_low;
     let mut inv_temp = 1.0 / temp0;
     let mut swap_candidates = vec![];
     let mut swap_candidates_seen = vec![false; input.district_count];
