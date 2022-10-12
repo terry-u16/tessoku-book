@@ -491,12 +491,16 @@ fn annealing(input: &Input, params: &Parameter, initial_state: State, duration: 
     let mut swap_candidates = vec![];
     let mut swap_candidates_seen = vec![false; input.district_count];
 
-    while time < 1.0 {
+    loop {
         all_iter += 1;
         if (all_iter & ((1 << 10) - 1)) == 0 {
             time = (std::time::Instant::now() - since).as_secs_f64() * duration_inv;
             let temp = f64::powf(temp0, 1.0 - time) * f64::powf(temp1, time);
             inv_temp = 1.0 / temp;
+        }
+
+        if time >= 1.0 {
+            break;
         }
 
         // 変形
@@ -509,18 +513,9 @@ fn annealing(input: &Input, params: &Parameter, initial_state: State, duration: 
             continue;
         }
 
-        state.change_assign_without_score_calc(target_district1, new_assign);
+        let swap_neighbor = rng.gen_bool(time);
 
-        if !state.check_connected(input, target_district1, old_assign) {
-            state.change_assign_without_score_calc(target_district1, old_assign);
-            continue;
-        }
-
-        state.change_assign_without_score_calc(target_district1, old_assign);
-
-        let neigh_type = rng.gen_range(0, 2);
-
-        if neigh_type != 0 {
+        if !swap_neighbor {
             // 1個伸ばす
             state.change_assign(input, target_district1, new_assign);
 
@@ -529,6 +524,13 @@ fn annealing(input: &Input, params: &Parameter, initial_state: State, duration: 
             let score_diff = new_score - current_score;
 
             if score_diff >= 0 || rng.gen_bool(f64::exp(score_diff as f64 * inv_temp)) {
+                // 連結checkが重いので採用するときのみcheckした方が速い
+                // tomerunさんの解法のパクりです……
+                if !state.check_connected(input, target_district1, old_assign) {
+                    state.change_assign(input, target_district1, old_assign);
+                    continue;
+                }
+
                 // 解の更新
                 current_score = new_score;
                 accepted_count += 1;
@@ -564,19 +566,6 @@ fn annealing(input: &Input, params: &Parameter, initial_state: State, duration: 
                 swap_candidates_seen[v] = false;
             }
 
-            state.change_assign_without_score_calc(target_district1, new_assign);
-            state.change_assign_without_score_calc(target_district2, old_assign);
-
-            if !state.check_connected(input, target_district1, old_assign)
-                || !state.check_connected(input, target_district2, new_assign)
-            {
-                state.change_assign_without_score_calc(target_district1, old_assign);
-                state.change_assign_without_score_calc(target_district2, new_assign);
-                continue;
-            }
-
-            state.change_assign_without_score_calc(target_district1, old_assign);
-            state.change_assign_without_score_calc(target_district2, new_assign);
             state.change_assign(input, target_district1, new_assign);
             state.change_assign(input, target_district2, old_assign);
 
@@ -585,6 +574,14 @@ fn annealing(input: &Input, params: &Parameter, initial_state: State, duration: 
             let score_diff = new_score - current_score;
 
             if score_diff >= 0 || rng.gen_bool(f64::exp(score_diff as f64 * inv_temp)) {
+                if !state.check_connected(input, target_district1, old_assign)
+                    || !state.check_connected(input, target_district2, new_assign)
+                {
+                    state.change_assign(input, target_district1, old_assign);
+                    state.change_assign(input, target_district2, new_assign);
+                    continue;
+                }
+
                 // 解の更新
                 current_score = new_score;
                 accepted_count += 1;
