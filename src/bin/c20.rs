@@ -523,14 +523,11 @@ fn annealing(input: &Input, params: &Parameter, initial_state: State, duration: 
             let new_score = state.annealing_score;
             let score_diff = new_score - current_score;
 
-            if score_diff >= 0 || rng.gen_bool(f64::exp(score_diff as f64 * inv_temp)) {
-                // 連結checkが重いので採用するときのみcheckした方が速い
-                // tomerunさんの解法のパクりです……
-                if !state.check_connected(input, target_district1, old_assign) {
-                    state.change_assign(input, target_district1, old_assign);
-                    continue;
-                }
-
+            // 連結checkが重いので採用するときのみcheckした方が速い
+            // tomerunさんの解法のパクりです……
+            if (score_diff >= 0 || rng.gen_bool(f64::exp(score_diff as f64 * inv_temp)))
+                && state.check_connected(input, target_district1, old_assign)
+            {
                 // 解の更新
                 current_score = new_score;
                 accepted_count += 1;
@@ -573,15 +570,10 @@ fn annealing(input: &Input, params: &Parameter, initial_state: State, duration: 
             let new_score = state.annealing_score;
             let score_diff = new_score - current_score;
 
-            if score_diff >= 0 || rng.gen_bool(f64::exp(score_diff as f64 * inv_temp)) {
-                if !state.check_connected(input, target_district1, old_assign)
-                    || !state.check_connected(input, target_district2, new_assign)
-                {
-                    state.change_assign(input, target_district1, old_assign);
-                    state.change_assign(input, target_district2, new_assign);
-                    continue;
-                }
-
+            if (score_diff >= 0 || rng.gen_bool(f64::exp(score_diff as f64 * inv_temp)))
+                && state.check_connected(input, target_district1, old_assign)
+                && state.check_connected(input, target_district2, new_assign)
+            {
                 // 解の更新
                 current_score = new_score;
                 accepted_count += 1;
